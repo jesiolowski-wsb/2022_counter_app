@@ -1,13 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
-class List extends Component {
-  render() {
-    return this.props.items.map((i) => (
-      <span key={i} className="badge badge-success m-1">
-        #{i}
-      </span>
-    ));
-  }
-}
+const List = ({ items, type }) => {
+  return items.map((i) => (
+    <span key={i} className="badge badge-primary m-1">
+      #{i} {type}
+    </span>
+  ));
+};
 
 export default List;
