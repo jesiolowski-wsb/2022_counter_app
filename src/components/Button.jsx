@@ -1,20 +1,18 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-class Button extends Component {
-  state = { value: 0 };
+const Button = () => {
+  const [counterValue, setCounterValue] = useState(0);
 
-  handleClick = (param) => {
-    this.setState({ value: this.state.value + param });
+  const handleClick = (param) => {
+    setCounterValue(counterValue + param);
   };
 
-  render() {
-    return (
-      <>
-        <div>{this.state.value}</div>
-        <button onClick={() => this.handleClick(3)}>click me </button>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <div>{counterValue}</div>
+      <button onClick={() => handleClick(3)}>click me </button>
+    </>
+  );
+};
 
 export default Button;
