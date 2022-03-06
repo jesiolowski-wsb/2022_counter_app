@@ -1,10 +1,11 @@
 import "./App.css";
-import List from "./components/list";
+import Avatar from "./components/Avatar";
+import { GENDER } from "./components/constants";
 
 function App() {
   return (
     <div className="App">
-      <List items={["tag1"]} type={"primary"} />
+      <Avatar name={"John Smith"} gender={GENDER.MALE} />
     </div>
   );
 }
