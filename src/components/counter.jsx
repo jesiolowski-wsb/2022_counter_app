@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
-const Counter = () => {
-  const [count, setCount] = useState(8);
+const Counter = (props) => {
+  const [count, setCount] = useState(props.blah);
+
+  console.log("xxxxxxxxx", props);
 
   const handleIncrement = (parameter) => {
     console.log("xxx", parameter);
