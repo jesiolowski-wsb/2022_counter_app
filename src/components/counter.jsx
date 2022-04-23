@@ -1,39 +1,34 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-class Counter extends Component {
-  state = {
-    count: 4,
-  };
+const Counter = () => {
+  const [count, setCount] = useState(8);
 
-  handleIncrement = (parameter) => {
+  const handleIncrement = (parameter) => {
     console.log("xxx", parameter);
-    this.setState({ count: this.state.count + 1 });
+    setCount(count + 1);
   };
 
-  render() {
-    return (
-      <>
-        <span className={this.getClassNames()}>{this.formatCount()}</span>
-        <button
-          className="btn btn-secondary btn-sm"
-          onClick={() => this.handleIncrement(4)}
-        >
-          increment
-        </button>
-      </>
-    );
-  }
-
-  getClassNames() {
+  const getClassNames = () => {
     let classes = "badge m-2 badge-";
-    classes += this.state.count === 0 ? "warning" : "primary";
+    classes += count === 0 ? "warning" : "primary";
     return classes;
-  }
+  };
 
-  formatCount() {
-    const { count } = this.state;
+  const formatCount = () => {
     return count === 0 ? <h1>Zero</h1> : count;
-  }
-}
+  };
+
+  return (
+    <>
+      <span className={getClassNames()}>{formatCount()}</span>
+      <button
+        className="btn btn-secondary btn-sm"
+        onClick={() => handleIncrement(4)}
+      >
+        increment
+      </button>
+    </>
+  );
+};
 
 export default Counter;

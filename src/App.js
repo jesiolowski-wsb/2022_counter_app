@@ -1,13 +1,10 @@
 import "./App.css";
-import Avatar from "./components/Avatar";
-import { GENDER } from "./components/constants";
-import Button from "./components/Button";
+import Counter from "./components/counter";
 
 function App() {
   return (
     <div className="App">
-      <Avatar name={"John Smith"} gender={GENDER.MALE} />
-      <Button />
+      <Counter />
     </div>
   );
 }
