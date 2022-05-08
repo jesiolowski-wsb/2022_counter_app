@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Counter = ({ id, blah, onDelete }) => {
+const Counter = ({ counter: { id, value: blah }, onDelete }) => {
   const [count, setCount] = useState(blah);
 
   const handleIncrement = () => setCount(count + 1);
