@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 
-const Counter = (props) => {
-  const [count, setCount] = useState(props.blah);
+const Counter = ({ blah }) => {
+  const [count, setCount] = useState(blah);
 
-  console.log("xxxxxxxxx", props);
-
-  const handleIncrement = (parameter) => {
-    console.log("xxx", parameter);
-    setCount(count + 1);
+  const handleIncrement = () => setCount(count + 1);
+  const handleDelete = () => {
+    console.log("delete clicked");
   };
 
   const getClassNames = () => {
@@ -23,11 +21,11 @@ const Counter = (props) => {
   return (
     <>
       <span className={getClassNames()}>{formatCount()}</span>
-      <button
-        className="btn btn-secondary btn-sm"
-        onClick={() => handleIncrement(4)}
-      >
+      <button className="btn btn-secondary btn-sm" onClick={handleIncrement}>
         increment
+      </button>
+      <button className="btn btn-sm btn-danger m-2" onClick={handleDelete}>
+        delete
       </button>
     </>
   );
