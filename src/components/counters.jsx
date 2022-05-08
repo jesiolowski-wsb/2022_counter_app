@@ -10,7 +10,8 @@ const Counters = () => {
   ]);
 
   const handleDelete = (id) => {
-    console.log("handle delete from outside", id);
+    const newCounters = counters.filter((c) => c.id !== id);
+    setCounters(newCounters);
   };
 
   return counters.map((coo) => (
