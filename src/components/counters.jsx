@@ -14,8 +14,8 @@ const Counters = () => {
     setCounters(newCounters);
   };
 
-  const handleIncrement = () => {
-    console.log("incrementing");
+  const handleIncrement = (counter) => {
+    console.log("incrementing", counter);
   };
 
   const handleReset = () => {
