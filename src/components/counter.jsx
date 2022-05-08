@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 
-const Counter = ({ blah }) => {
+const Counter = ({ blah, onDelete }) => {
   const [count, setCount] = useState(blah);
 
   const handleIncrement = () => setCount(count + 1);
-  const handleDelete = () => {
-    console.log("delete clicked");
-  };
 
   const getClassNames = () => {
     let classes = "badge m-2 badge-";
@@ -24,7 +21,7 @@ const Counter = ({ blah }) => {
       <button className="btn btn-secondary btn-sm" onClick={handleIncrement}>
         increment
       </button>
-      <button className="btn btn-sm btn-danger m-2" onClick={handleDelete}>
+      <button className="btn btn-sm btn-danger m-2" onClick={onDelete}>
         delete
       </button>
     </>

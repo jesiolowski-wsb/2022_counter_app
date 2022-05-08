@@ -9,7 +9,13 @@ const Counters = () => {
     { id: 4, value: 88 },
   ]);
 
-  return counters.map((coo) => <Counter key={coo.id} blah={coo.value} />);
+  const handleDelete = () => {
+    console.log("handle delete from outside");
+  };
+
+  return counters.map((coo) => (
+    <Counter onDelete={handleDelete} key={coo.id} blah={coo.value} />
+  ));
 };
 
 export default Counters;
