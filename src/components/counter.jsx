@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Counter = ({ blah, onDelete }) => {
+const Counter = ({ id, blah, onDelete }) => {
   const [count, setCount] = useState(blah);
 
   const handleIncrement = () => setCount(count + 1);
@@ -21,7 +21,10 @@ const Counter = ({ blah, onDelete }) => {
       <button className="btn btn-secondary btn-sm" onClick={handleIncrement}>
         increment
       </button>
-      <button className="btn btn-sm btn-danger m-2" onClick={onDelete}>
+      <button
+        className="btn btn-sm btn-danger m-2"
+        onClick={() => onDelete(id)}
+      >
         delete
       </button>
     </>
