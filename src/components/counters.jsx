@@ -15,7 +15,11 @@ const Counters = () => {
   };
 
   const handleIncrement = (counter) => {
-    console.log("incrementing", counter);
+    const newCounters = [...counters];
+    const index = newCounters.indexOf(counter);
+    newCounters[index] = { ...counter };
+    newCounters[index].value++;
+    setCounters(newCounters);
   };
 
   const handleReset = () => {
