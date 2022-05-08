@@ -14,6 +14,10 @@ const Counters = () => {
     setCounters(newCounters);
   };
 
+  const handleIncrement = () => {
+    console.log("incrementing");
+  };
+
   const handleReset = () => {
     const newCounters = counters.map((c) => {
       c.value = 0;
@@ -28,7 +32,12 @@ const Counters = () => {
         reset
       </button>
       {counters.map((coo) => (
-        <Counter key={coo.id} counter={coo} onDelete={handleDelete} />
+        <Counter
+          key={coo.id}
+          counter={coo}
+          onDelete={handleDelete}
+          onIncrement={handleIncrement}
+        />
       ))}
     </>
   );
