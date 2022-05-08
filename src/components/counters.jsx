@@ -14,9 +14,14 @@ const Counters = () => {
     setCounters(newCounters);
   };
 
-  return counters.map((coo) => (
-    <Counter key={coo.id} counter={coo} onDelete={handleDelete} />
-  ));
+  return (
+    <>
+      <div>header</div>
+      {counters.map((coo) => (
+        <Counter key={coo.id} counter={coo} onDelete={handleDelete} />
+      ))}
+    </>
+  );
 };
 
 export default Counters;
